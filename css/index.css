@@ -1,0 +1,208 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+  font-family: sans-serif;        
+}
+
+body {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr;
+  grid-template-areas: "testata"
+                       "navigazione"
+                       "banner"
+                       "primc"
+                       "secoc"
+                       "terzac"                             
+                       "footer";
+}
+header {
+  grid-area: testata;
+  padding: 5px;
+}
+
+.navigazione{
+  grid-area: navigazione;
+}
+
+#hero-banner{
+  grid-area: banner;
+}
+
+.primacolonna{
+  grid-area: primc;
+}
+
+.secondacolonna{
+  grid-area: secoc;
+}
+
+.terzacolonna{
+  grid-area: terzac;
+}
+
+footer{
+  grid-area: footer;
+}
+
+header,
+.navigazione,
+section,
+footer {
+  border: 1px solid black;
+  background-color: bisque;
+}
+
+img {
+  max-width: 100%;
+}
+
+section {
+  padding: 1em;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+/*Menù Navigazione*/
+
+.navigazione {
+    flex-direction: column;
+}
+
+.navigazione li {
+  background-color: orange;
+  border-bottom: 1px solid rgb(255, 255, 255);
+}
+
+.navigazione li:last-child{
+  border-bottom: none;
+}
+
+.navigazione li a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px;
+  color: white;
+  align-items: center;
+  font-weight: 400;
+  text-transform: uppercase;
+  height: 100%;
+}
+
+/*Hero-Banner*/
+#hero-banner {
+    padding: 0;
+}
+
+#hero-banner img {
+  display: block;
+}
+
+
+/*Footer*/
+
+footer ul {
+    display: flex;
+    justify-content: flex-start;
+}
+footer ul li {
+  width: 54px;
+  height: 54px;
+  transition: 0.5s;
+  margin-right: 10px;
+}
+
+footer ul li:nth-child(1) {
+  background: url(../img/csssprites.png) -5px -5px;
+}
+
+footer ul li:nth-child(2) {
+  background: url(../img/csssprites.png) -5px -133px;
+}
+
+footer ul li:nth-child(3) {
+  background: url(../img/csssprites.png) -5px -261px;
+}
+
+footer ul li:nth-child(4) {
+  background: url(../img/csssprites.png) -5px -389px;
+}
+
+footer ul li:nth-child(5) {
+  background: url(../img/csssprites.png) -5px -517px;
+}
+
+footer ul li:nth-child(1):hover {
+  background: url(../img/csssprites.png) -5px -69px;
+}
+
+footer ul li:nth-child(2):hover {
+  background: url(../img/csssprites.png) -5px -197px;
+}
+
+footer ul li:nth-child(3):hover {
+  background: url(../img/csssprites.png) -5px -325px;
+}
+
+footer ul li:nth-child(4):hover {
+  background: url(../img/csssprites.png) -5px -453px;
+}
+
+footer ul li:nth-child(5):hover {
+  background: url(../img/csssprites.png) -5px -581px;
+}
+
+
+/*768Px*/
+
+@media screen and (min-width:768px) {
+    body {
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas: "testata testata"
+                             "navigazione navigazione"
+                             "banner banner"
+                             "primc  terzac"
+                             "primc  secoc"
+                             "footer footer";                             
+    }
+
+
+    .navigazione {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .navigazione li {
+      flex: 25%;
+      border-right: 1px solid white;
+      border-bottom: none;
+    }
+
+    .navigazione li:last-child{
+      border-right: none;
+    }
+  }
+
+    @media screen and (min-width:960px) {
+        body {
+            grid-template-columns: 2fr 1fr 1fr;
+            grid-template-areas: "testata testata testata"
+                                 "navigazione navigazione navigazione"
+                                 "banner banner banner"
+                                 "primc  secoc terzac"
+                                 "footer footer footer";
+                                                    
+        }
+        }
+        
